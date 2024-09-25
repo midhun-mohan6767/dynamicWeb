@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="sub">
+   <div class="contents">
+    <input class="inp" type="text" readonly id="result">
+    <button onclick="displayData('7')" class="seven">7</button>
+    <button  onclick="displayData('8')" class="eight">8</button>
+    <button onclick="displayData('9')" class="nine">9</button>
+    <button onclick="displayData('/')" class="dev">/</button>
+    <button onclick="displayData('progressing!!')" class="auto">AUTO REPLAY</button>
+    <button onclick="clearCalcScreen()" class="on">on</button>
+    <button onclick="displayData('4')" class="four">4</button> 
+    <button onclick="displayData('5')" class="five">5</button> 
+    <button onclick="displayData('6')" class="six">6</button> 
+    <button onclick="displayData('*')" class="mul">*</button> 
+    <button onclick="displayData('%')" class="mod">%</button> 
+    <button onclick="displayData('1')" class="one">1</button>
+    <button  onclick="displayData('2')" class="two">2</button>
+    <button onclick="displayData('3')" class="three">3</button>
+  <button onclick="displayData('+')" class="add">+</button>
+    
+    <button onclick="displayData('-')" class="min">-</button>
+<div>
+        <button onclick="removeLastCalItem()" class="ce">CE</button>
+        <button onclick="displayData('0')" class="zero">0</button>
+        <button onclick="displayData('00')" class="dzero">00</button>
+        <button onclick="displayData('.')" class="dot">.</button>
+        <button onclick="evaluvateExpr()" class="eq">=</button>
+    
+    
+</div>
+   </div>
+        </div>
+    </div>
+</body>
+
+<script>
+
+
+const displayData = (content)=>{
+    result.value+= content
+}
+const clearCalcScreen =()=>{
+    result.value= ""
+}
+const evaluvateExpr = ()=>{
+    try{                                         
+        result.value= eval(result.value)
+        result.placeholder  = "0" 
+    }catch{
+        result.placeholder  = "invalid Expression"       
+    }
+}
+
+const removeLastCalItem = ()=>{
+    result.value = result.value.slice(0,-1) 
+}
+
+
+</script>
+
+</html>
